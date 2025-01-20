@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "finns-i-sjon-2/1.0.0": {
+        "runtime": {
+          "finns-i-sjon-2.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "finns-i-sjon-2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
