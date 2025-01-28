@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("finns-i-sjon-2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9300cb2877bc0425065fc13c0e30a885e890651d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ddbadbca0c6e35947d11f2757a7a104136c02cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("finns-i-sjon-2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("finns-i-sjon-2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
