@@ -12,3 +12,4 @@ C:\Users\alle07002\OneDrive - Växjö kommun\Skrivbordet\program\finns-i-sjon-2\
 C:\Users\alle07002\OneDrive - Växjö kommun\Skrivbordet\program\finns-i-sjon-2\obj\Debug\net8.0\finns-i-sjon-2.pdb
 C:\Users\alle07002\OneDrive - Växjö kommun\Skrivbordet\program\finns-i-sjon-2\obj\Debug\net8.0\finns-i-sjon-2.genruntimeconfig.cache
 C:\Users\alle07002\OneDrive - Växjö kommun\Skrivbordet\program\finns-i-sjon-2\obj\Debug\net8.0\ref\finns-i-sjon-2.dll
+C:\Users\alle07002\OneDrive - Växjö kommun\Skrivbordet\program\finns-i-sjon-2\obj\Debug\net8.0\finns-i-sjon-2.sourcelink.json

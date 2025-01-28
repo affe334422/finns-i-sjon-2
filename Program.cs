@@ -1,6 +1,7 @@
 ﻿using System.Runtime.Intrinsics.Arm;
 using finns_i_sjon_2;
 
+
 List<string> Kortlek = new List<string>{
     "Ess", "Ess", "Ess", "Ess", "2", "2", "2", "2", "3", "3", "3", "3",
     "4", "4", "4", "4", "5", "5", "5", "5", "6", "6", "6", "6",
@@ -8,37 +9,39 @@ List<string> Kortlek = new List<string>{
     "10", "10", "10", "10", "Knäkt", "Knäkt", "Knäkt", "Knäkt",
     "Dam", "Dam", "Dam", "Dam", "Kung", "Kung", "Kung", "Kung"
 };
+Random ran = new Random();
+Spelare S1 = new Spelare();
+Spelare S2 = new Spelare();
+Spelare S3 = new Spelare();
+Spelare S4 = new Spelare();
 
-spelare_händer s1 = new spelare_händer();
-spelare_händer s2 = new spelare_händer();
-spelare_händer s3 = new spelare_händer();
-spelare_händer s4 = new spelare_händer();
 
-for(int i = 0; i != 7; i++){
-    s1.LäggTillIHand(DraRandomKort(ref Kortlek));
-    s2.LäggTillIHand(DraRandomKort(ref Kortlek));
-    s3.LäggTillIHand(DraRandomKort(ref Kortlek));
-    s4.LäggTillIHand(DraRandomKort(ref Kortlek));
+
+for(int i = 0; i < 7; i++){ // Lägger kort i händerna
+    S1.Addhand = Randomhand(ref Kortlek, ran);
+    S2.Addhand = Randomhand(ref Kortlek, ran);
+    S3.Addhand = Randomhand(ref Kortlek, ran);
+    S4.Addhand = Randomhand(ref Kortlek, ran);
 }
 
 
-s1.SkrivDinHand();
-s2.SkrivDinHand();
-s3.SkrivDinHand();
-s4.SkrivDinHand();
+// skriver ut dem kort du har i handen
+SkrivKort(S1);
+SkrivKort(S2);
+SkrivKort(S3);
+SkrivKort(S4);
 
 
-
-
-static string DraRandomKort(ref List<string> Kortlek){
-    Random r = new Random();
-    if(Kortlek.Count == 0){
-        return null;
+static void SkrivKort(Spelare SS){
+    foreach(string Kort in SS.DinaKort){
+        Console.Write(Kort + " ");
     }
-    int rr = Kortlek.Count();
+}
 
-    string Kort = Kortlek[r.Next(0,rr-1)];
+static string Randomhand(ref List<string> Kortlek, Random ran){
+    string Kort;
+    int Nummer = ran.Next(1,Kortlek.Count);
+    Kort = Kortlek[Nummer];
     Kortlek.Remove(Kort);
-
     return Kort;
 }
