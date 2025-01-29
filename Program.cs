@@ -70,7 +70,7 @@ while(S1.DinaKort.Count > 0 || S2.DinaKort.Count > 0 || S3.DinaKort.Count > 0 ||
     // Ta kort från annan spelare.
     if(S1.DinaKort.Count != 0){
         VemsTur(S1);
-        if(1==2){
+        if(1==1){
             do{ 
                 Kortlek = IngaKort(Kortlek, S1);
                 string mes0 = "Du ska ta ett kort från en annan spelare. Vilket kort vill du ta?";
@@ -92,7 +92,7 @@ while(S1.DinaKort.Count > 0 || S2.DinaKort.Count > 0 || S3.DinaKort.Count > 0 ||
                     Kortlek = Spelsekvens(Kortlek, S1, S4, ref BotMinne);
                 }
                 HarDe4(S1);
-            }while(S1.fårduköraigen == "Ja");
+            }while(S1.fårduköraigen == "Ja" && S1.DinaKort.Count > 0);
         }
         else{
             do{
@@ -108,7 +108,7 @@ while(S1.DinaKort.Count > 0 || S2.DinaKort.Count > 0 || S3.DinaKort.Count > 0 ||
                     Kortlek = Spelsekvens(Kortlek, S1, S4, ref BotMinne);
                 }
                 HarDe4(S1);
-            }while(S1.fårduköraigen == "Ja");
+            }while(S1.fårduköraigen == "Ja" && S1.DinaKort.Count > 0);
         }
         BotMinne[S1.vemärdu] = S1.kortduvillha;
     }
@@ -128,7 +128,7 @@ while(S1.DinaKort.Count > 0 || S2.DinaKort.Count > 0 || S3.DinaKort.Count > 0 ||
                 Kortlek = Spelsekvens(Kortlek, S2, S4, ref BotMinne);
             }
             HarDe4(S2);
-        }while(S2.fårduköraigen == "Ja");
+        }while(S2.fårduköraigen == "Ja" && S2.DinaKort.Count > 0);
         BotMinne[S2.vemärdu] = S2.kortduvillha;
     }
 
@@ -147,7 +147,7 @@ while(S1.DinaKort.Count > 0 || S2.DinaKort.Count > 0 || S3.DinaKort.Count > 0 ||
                 Kortlek = Spelsekvens(Kortlek, S3, S4, ref BotMinne);
             }
             HarDe4(S3);
-        }while(S3.fårduköraigen == "Ja");
+        }while(S3.fårduköraigen == "Ja" && S3.DinaKort.Count > 0);
         BotMinne[S3.vemärdu] = S3.kortduvillha;
     }
 
@@ -166,22 +166,11 @@ while(S1.DinaKort.Count > 0 || S2.DinaKort.Count > 0 || S3.DinaKort.Count > 0 ||
                 Kortlek = Spelsekvens(Kortlek, S4, S3, ref BotMinne);
             }
             HarDe4(S4);
-        }while(S4.fårduköraigen == "Ja");
+        }while(S4.fårduköraigen == "Ja" && S4.DinaKort.Count > 0);
         BotMinne[S4.vemärdu] = S4.kortduvillha;
     }
-    Console.WriteLine("Ett varv                                                 zzzzz");
-    foreach(string SS in Kortlek){
-        Console.Write(SS + " ");
-    }
-    Console.WriteLine();
-    foreach(Spelare SS in FörVemSomVinner){
-        Console.WriteLine(SS.poäng);
-    }
-    Console.ReadLine();
 }
-foreach(Spelare SS in FörVemSomVinner){
-    SkrivKort(SS);
-}
+
 VemVan(FörVemSomVinner);
 
 static void VemVan(List<Spelare> SV){
@@ -550,12 +539,7 @@ static int BotHjärna(Spelare SS){
             }
         } 
     }
-    try{
-        SS.kortduvillha = SS.DinaKort[r.Next(0,SS.DinaKort.Count)];
-    }
-    catch{
-        string mes1 = ""
-    }
+    SS.kortduvillha = SS.DinaKort[r.Next(0,SS.DinaKort.Count)];
     return SS.villfråga;
 }
 static List<Spelare> MergeSort(List<Spelare> PL){
