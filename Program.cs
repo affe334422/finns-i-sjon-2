@@ -24,7 +24,7 @@ S4.vemärdu = 4;
 List<Spelare> FörVemSomVinner = new List<Spelare>(){S1,S2,S3,S4};
 
 // För att ändra hastigheten på texten.
-//S1.tid = ÄndraHastighet(S1);
+S1.tid = ÄndraHastighet(S1);
 S2.tid = S1.tid;
 S3.tid = S1.tid;
 S4.tid = S1.tid;
