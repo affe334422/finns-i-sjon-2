@@ -14,7 +14,7 @@ namespace finns_i_sjon_2
         private string KortDuVillHa;
         private string FårDuKöraIgen = "Nej";
         // Hastigheten på texten. När den är har inne så är det lättare att ändra den för hela spelet.
-        private int Tid = 0;
+        private int Tid = 50;
 
         private int VemDuvillFråga;
         private int VemDuNyssFråga;

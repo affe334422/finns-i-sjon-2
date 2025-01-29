@@ -80,7 +80,7 @@ while(S1.DinaKort.Count > 0 || S2.DinaKort.Count > 0 || S3.DinaKort.Count > 0 ||
                 S1.kortduvillha = Rätta(Console.ReadLine(),S1);
                 BotMinne[S1.vemärdu] = S1.kortduvillha;
                 sakta(mes1,S1.tid);
-                SpleareDuVillFråga = KollapoängOckså();
+                SpleareDuVillFråga = KollapoängOckså(S1);
 
                 if(SpleareDuVillFråga == S2.vemärdu){
                     Kortlek = Spelsekvens(Kortlek, S1, S2, ref BotMinne);
@@ -287,8 +287,7 @@ static string TaFrånSjön(ref List<string> Kortlek, Spelare SS){
     }
     return Kort;
 }
-static int KollapoängOckså(){
-    Spelare SS = new Spelare();
+static int KollapoängOckså(Spelare SS){
     string mes0 = "Det är inte 2, 3 eller 4.";
     string mes1 = "Ingen vem vill du fråga 2, 3 eller 4"; 
     try{
@@ -297,7 +296,7 @@ static int KollapoängOckså(){
     catch{
         sakta(mes0,SS.tid);
         sakta(mes1,SS.tid);
-        return KollapoängOckså();
+        return KollapoängOckså(SS);
     }
 }
 static string Rätta(string Kort, Spelare SS){
